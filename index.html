@@ -4,95 +4,151 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Drohnen-Dokumente – Berufsfeuerwehr Bozen</title>
-
   <style>
-    /* ===================
-       Grundlegende Styles
-       =================== */
-    * {
+    /* ================
+       GLOBAL RESET
+       ================ */
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
+    /* ================
+       BASIS-STYLES
+       ================ */
     body {
       font-family: Arial, sans-serif;
-      background: #f7f7f7;
       color: #333;
+      background-color: #f2f2f2;
+      line-height: 1.5;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
+    /* ================
+       HEADER
+       ================ */
     header {
-      background-color: #b11b1b; /* Dunkles Rot */
+      background-color: #2f403e; /* Dunkles, grünlich-blaues Grau */
       color: #fff;
-      text-align: center;
       padding: 1.5rem;
+      text-align: center;
     }
     header h1 {
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+    header p {
+      font-size: 1rem;
+      font-weight: 300;
     }
 
+    /* ================
+       PARALLAX-SEKTION
+       ================ */
+    .parallax {
+      /* Pfad zum Bild anpassen:
+         Du könntest es zum Beispiel unter /images/drone_bg.jpg ablegen. */
+      background: url("images/drone_bg.jpg") no-repeat center center;
+      background-size: cover;
+      /* "fixed" sorgt für den Parallax-Effekt beim Scrollen */
+      background-attachment: fixed;
+      height: 60vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .parallax::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      /* halbtransparente Overlay-Farbe (dunkler Schleier) */
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+    .parallax h2 {
+      z-index: 2; /* damit der Text über dem Overlay liegt */
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    /* ================
+       MAIN-CONTAINER
+       ================ */
     main {
       max-width: 700px;
       margin: 2rem auto;
-      background-color: #fff;
       padding: 1.5rem;
+      background-color: #fff;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    h2 {
+    main h3 {
       margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #2f403e; /* Gleiche Farbe wie Header, für einen einheitlichen Look */
     }
-    p {
+    main p {
       margin-bottom: 1rem;
-      line-height: 1.5;
     }
 
-    /* ===================
-       Download-Liste
-       =================== */
+    /* ================
+       DOWNLOAD-LISTE
+       ================ */
     ul.download-list {
       list-style: none;
       margin: 1rem 0;
       padding-left: 0;
     }
     ul.download-list li {
-      margin: 1rem 0;
-      display: flex;
-      align-items: center;
+      margin-bottom: 0.6rem;
     }
-
     ul.download-list a {
       display: flex;
       align-items: center;
-      text-decoration: none;
-      color: #b11b1b;
       font-weight: 600;
+      color: #2f403e;
       transition: color 0.3s ease;
     }
-
     ul.download-list a:hover {
-      color: #7f1111;
+      color: #446d6a; /* etwas helleres Grün-Grau */
+    }
+    /* PDF-Icon */
+    ul.download-list a svg {
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+      fill: #2f403e;
+      transition: fill 0.3s ease;
+    }
+    ul.download-list a:hover svg {
+      fill: #446d6a;
     }
 
-    ul.download-list img.preview {
-      width: 200px;
-      height: auto;
-      margin-right: 1rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      border-radius: 4px;
-      transition: transform 0.3s ease;
+    /* ================
+       RESPONSIVE STYLES
+       ================ */
+    @media (max-width: 768px) {
+      .parallax {
+        background-attachment: scroll; /* "fixed" kann auf mobilen Geräten ggf. nicht funktionieren */
+        height: 40vh;
+      }
+      .parallax h2 {
+        font-size: 1.5rem;
+      }
     }
-
-    ul.download-list a:hover img.preview {
-      transform: scale(1.05);
-    }
-
-    /* ===================
-       Responsive Styles
-       =================== */
     @media (max-width: 480px) {
       header h1 {
+        font-size: 1.4rem;
+      }
+      .parallax h2 {
         font-size: 1.2rem;
       }
       main {
@@ -104,79 +160,113 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
-    <h1>Dokumente für Drohnen-Piloten</h1>
+    <h1>Drohnen-Pilotendokumente</h1>
     <p>Berufsfeuerwehr Bozen</p>
   </header>
 
+  <!-- PARALLAX-BEREICH -->
+  <section class="parallax">
+    <h2>Bereit für den nächsten Flug?</h2>
+  </section>
+
+  <!-- HAUPTINHALT MIT DOKUMENTEN-DOWNLOADS -->
   <main>
-    <h2>Übersicht & Downloads</h2>
-    <p>
-      Hier findest du alle relevanten Zertifikate und Dokumentationen als PDF.  
-      Klicke auf den Dateinamen, um das jeweilige Dokument herunterzuladen oder
-      im Browser zu öffnen (abhängig von deinen PDF-Einstellungen).
-    </p>
+    <h3>Übersicht & Downloads</h3>
+    <p>Hier findest du alle relevanten Zertifikate und Dokumentationen als PDF.  
+       Klicke auf den Dateinamen, um das jeweilige Dokument herunterzuladen oder  
+       im Browser zu öffnen (abhängig von deinen PDF-Einstellungen).</p>
 
     <ul class="download-list">
-      <!-- Bestehende Dokumente -->
+      <li>
+        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS02%20praxis.pdf" target="_blank">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
+                     0-2 .897-2 2v11c0 1.103.897 2 2 
+                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
+                     16H5V9h1v7h12V4l1-.001V18z"/>
+          </svg>
+          Zertifikat STS02 praxis.pdf
+        </a>
+      </li>
+      <li>
+        <a href="https://cauer71.github.io/drone/pdf/TRUST%20certificate%20USA.pdf" target="_blank">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
+                     0-2 .897-2 2v11c0 1.103.897 2 2 
+                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
+                     16H5V9h1v7h12V4l1-.001V18z"/>
+          </svg>
+          TRUST certificate USA.pdf
+        </a>
+      </li>
+      <li>
+        <a href="https://cauer71.github.io/drone/pdf/UAS%20Funk%20AESA.pdf" target="_blank">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
+                     0-2 .897-2 2v11c0 1.103.897 2 2 
+                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
+                     16H5V9h1v7h12V4l1-.001V18z"/>
+          </svg>
+          UAS Funk AESA.pdf
+        </a>
+      </li>
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20A1-A3.pdf" target="_blank">
-          <img src="jpg/Zertifikat%20A1-A3_preview.jpg" alt="Zertifikat A1-A3 Vorschau" class="preview">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
+                     0-2 .897-2 2v11c0 1.103.897 2 2 
+                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
+                     16H5V9h1v7h12V4l1-.001V18z"/>
+          </svg>
           Zertifikat A1-A3.pdf
         </a>
       </li>
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20A2.pdf" target="_blank">
-          <img src="jpg/Zertifikat%20A2_preview.jpg" alt="Zertifikat A2 Vorschau" class="preview">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
+                     0-2 .897-2 2v11c0 1.103.897 2 2 
+                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
+                     16H5V9h1v7h12V4l1-.001V18z"/>
+          </svg>
           Zertifikat A2.pdf
         </a>
       </li>
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS%20theorie.pdf" target="_blank">
-          <img src="jpg/Zertifikat%20STS%20theorie_preview.jpg" alt="Zertifikat STS Theorie Vorschau" class="preview">
-          Zertifikat STS Theorie.pdf
+          <svg viewBox="0 0 24 24">
+            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
+                     0-2 .897-2 2v11c0 1.103.897 2 2 
+                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
+                     16H5V9h1v7h12V4l1-.001V18z"/>
+          </svg>
+          Zertifikat STS theorie.pdf
         </a>
       </li>
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS01%20praxis.pdf" target="_blank">
-          <img src="jpg/Zertifikat%20STS01%20praxis_preview.jpg" alt="Zertifikat STS01 Praxis Vorschau" class="preview">
-          Zertifikat STS01 Praxis.pdf
-        </a>
-      </li>
-      <li>
-        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS02%20praxis.pdf" target="_blank">
-          <img src="jpg/Zertifikat%20STS02%20praxis_preview.jpg" alt="Zertifikat STS02 Praxis Vorschau" class="preview">
-          Zertifikat STS02 Praxis.pdf
-        </a>
-      </li>
-      <li>
-        <a href="https://cauer71.github.io/drone/pdf/TRUST%20certificate%20USA.pdf" target="_blank">
-          <img src="jpg/TRUST%20certificate%20USA_preview.jpg" alt="TRUST Certificate USA Vorschau" class="preview">
-          TRUST Certificate USA.pdf
-        </a>
-      </li>
-      <li>
-        <a href="https://cauer71.github.io/drone/pdf/UAS%20Funk%20AESA.pdf" target="_blank">
-          <img src="jpg/UAS%20Funk%20AESA_preview.jpg" alt="UAS Funk AESA Vorschau" class="preview">
-          UAS Funk AESA.pdf
-        </a>
-      </li>
-
-      <!-- Neue Dokumente -->
-      <li>
-        <a href="https://cauer71.github.io/drone/pdf/INFO%20TB%20E%20MANUALE%20OPERAZIONI.pdf" target="_blank">
-          <img src="jpg/INFO%20TB%20E%20MANUALE%20OPERAZIONI_preview.jpg" alt="INFO TB E MANUALE OPERAZIONI Vorschau" class="preview">
-          INFO TB E MANUALE OPERAZIONI.pdf
-        </a>
-      </li>
-      <li>
-        <a href="https://cauer71.github.io/drone/pdf/Assicurazione%202025.pdf" target="_blank">
-          <img src="jpg/Assicurazione%202025_preview.jpg" alt="Assicurazione 2025 Vorschau" class="preview">
-          Assicurazione 2025.pdf
+          <svg viewBox="0 0 24 24">
+            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
+                     0-2 .897-2 2v11c0 1.103.897 2 2 
+                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
+                     16H5V9h1v7h12V4l1-.001V18z"/>
+          </svg>
+          Zertifikat STS01 praxis.pdf
         </a>
       </li>
     </ul>
   </main>
 
+  <script>
+    // Optional: kleines Klick-Feedback
+    const downloadLinks = document.querySelectorAll(".download-list a");
+    downloadLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        console.log("Download geklickt:", link.textContent.trim());
+      });
+    });
+  </script>
 </body>
 </html>
