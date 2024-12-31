@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Drohnen-Dokumente – Berufsfeuerwehr Bozen</title>
+  <title>Drohnen Staffel – Berufsfeuerwehr Bozen</title>
   <style>
     /* ================
        GLOBAL RESET
@@ -51,7 +51,7 @@
        PARALLAX-SEKTION
        ================ */
     .parallax {
-      background: url("https://cauer71.github.io/drone/jpg/drone_bg.jpg") no-repeat center center;
+      background: url("jpg/m30t.jpg") no-repeat center center;
       background-size: cover;
       background-attachment: fixed; /* Parallax-Effekt */
       height: 60vh;
@@ -119,13 +119,14 @@
       color: #446d6a;
     }
 
-    /* Preview-Bild:
-       Standard: Desktop (≥768px) => 60px,
-       Mobile (<768px) => 30px (per Media Query) */
+    /* Preview-Bild
+       STANDARD (Desktop): 300px
+       in der Media Query (max-width: 768px): 150px
+    */
     ul.download-list img.pdf-preview {
-      width: 60px;       /* <-- Desktop: doppelte Größe */
+      width: 300px;   
       height: auto;
-      margin-right: 10px;
+      margin-right: 20px;
       border-radius: 4px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
@@ -139,17 +140,18 @@
        ================ */
     @media (max-width: 768px) {
       .parallax {
-        background-attachment: scroll; /* Fallback für Mobilgeräte */
-        height: 40vh;
+        background-attachment: scroll; /* Fallback bei Mobilgeräten */
+        height: 30vh;
       }
       .parallax h2 {
         font-size: 1.5rem;
       }
-      /* Mobile: Previews auf 30px Breite */
+      /* Mobile: Previews auf 150px */
       ul.download-list img.pdf-preview {
-        width: 30px;
+        width: 150px;
       }
     }
+
     @media (max-width: 480px) {
       header h1 {
         font-size: 1.4rem;
@@ -179,82 +181,99 @@
 
   <!-- HAUPTINHALT MIT DOKUMENTEN-DOWNLOADS -->
   <main>
-    <h3>Übersicht & Downloads</h3>
-    <p>Hier findest du alle relevanten Zertifikate und Dokumentationen als PDF.  
-       Klicke auf den Dateinamen, um das jeweilige Dokument herunterzuladen oder  
-       im Browser zu öffnen (abhängig von deinen PDF-Einstellungen).</p>
+    <h3>Zertifikate und Dokumente</h3>
+    <p>Christian Auer</p>
 
     <ul class="download-list">
 
-      <li>
-        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS02%20praxis.pdf" target="_blank">
-          <img 
-            src="https://cauer71.github.io/drone/jpg/Zertifikat_STS02_praxis_preview.jpg" 
-            alt="Vorschau Zertifikat STS02 praxis" 
-            class="pdf-preview" />
-          Zertifikat STS02 praxis.pdf
-        </a>
-      </li>
-
-      <li>
-        <a href="https://cauer71.github.io/drone/pdf/TRUST%20certificate%20USA.pdf" target="_blank">
-          <img 
-            src="https://cauer71.github.io/drone/jpg/TRUST_certificate_USA_preview.jpg" 
-            alt="Vorschau TRUST certificate USA" 
-            class="pdf-preview" />
-          TRUST certificate USA.pdf
-        </a>
-      </li>
-
-      <li>
-        <a href="https://cauer71.github.io/drone/pdf/UAS%20Funk%20AESA.pdf" target="_blank">
-          <img 
-            src="https://cauer71.github.io/drone/jpg/UAS_Funk_AESA_preview.jpg" 
-            alt="Vorschau UAS Funk AESA" 
-            class="pdf-preview" />
-          UAS Funk AESA.pdf
-        </a>
-      </li>
-
+      <!-- Beispiel: Zertifikat A1-A3 -->
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20A1-A3.pdf" target="_blank">
           <img 
-            src="https://cauer71.github.io/drone/jpg/Zertifikat_A1-A3_preview.jpg" 
+            src="jpg/Zertifikat_A1-A3_preview.jpg" 
             alt="Vorschau Zertifikat A1-A3" 
             class="pdf-preview" />
-          Zertifikat A1-A3.pdf
+          Zertifikat A1-A3
         </a>
       </li>
 
+      <!-- Beispiel: Zertifikat A2 -->
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20A2.pdf" target="_blank">
           <img 
-            src="https://cauer71.github.io/drone/jpg/Zertifikat_A2_preview.jpg" 
+            src="jpg/Zertifikat_A2_preview.jpg" 
             alt="Vorschau Zertifikat A2" 
             class="pdf-preview" />
-          Zertifikat A2.pdf
+          Zertifikat A2
         </a>
       </li>
 
+      <!-- Beispiel: Zertifikat STS theorie -->
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS%20theorie.pdf" target="_blank">
           <img 
-            src="https://cauer71.github.io/drone/jpg/Zertifikat_STS_theorie_preview.jpg" 
+            src="jpg/Zertifikat_STS_theorie_preview.jpg" 
             alt="Vorschau Zertifikat STS theorie" 
             class="pdf-preview" />
-          Zertifikat STS theorie.pdf
+          Zertifikat STS theorie
         </a>
       </li>
 
+      <!-- Beispiel: Zertifikat STS01 praxis -->
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS01%20praxis.pdf" target="_blank">
           <img 
-            src="https://cauer71.github.io/drone/jpg/Zertifikat_STS01_praxis_preview.jpg" 
+            src="jpg/Zertifikat_STS01_praxis_preview.jpg" 
             alt="Vorschau Zertifikat STS01 praxis" 
             class="pdf-preview" />
-          Zertifikat STS01 praxis.pdf
+          Zertifikat STS01 praxis
         </a>
       </li>
+
+      <!-- Beispiel: Zertifikat STS02 praxis -->
+      <li>
+        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS02%20praxis.pdf" target="_blank">
+          <img 
+            src="jpg/Zertifikat_STS02_praxis_preview.jpg" 
+            alt="Vorschau Zertifikat STS02 praxis" 
+            class="pdf-preview" />
+          Zertifikat STS02 praxis
+        </a>
+      </li>
+
+      <!-- Beispiel: TRUST certificate USA -->
+      <li>
+        <a href="https://cauer71.github.io/drone/pdf/TRUST%20certificate%20USA.pdf" target="_blank">
+          <img 
+            src="jpg/TRUST_certificate_USA_preview.jpg" 
+            alt="Vorschau TRUST certificate USA" 
+            class="pdf-preview" />
+          TRUST certificate USA
+        </a>
+      </li>
+
+      <!-- Beispiel: UAS Funk AESA -->
+      <li>
+        <a href="https://cauer71.github.io/drone/pdf/UAS%20Funk%20AESA.pdf" target="_blank">
+          <img 
+            src="jpg/UAS_Funk_AESA_preview.jpg" 
+            alt="Vorschau UAS Funk AESA" 
+            class="pdf-preview" />
+          UAS Funk AESA
+        </a>
+      </li>
+
+      <!-- Beispiel: Manuale -->
+      <li>
+        <a href="https://cauer71.github.io/drone/pdf/INFO%20TB%20E%20MANUALE%20OPERAZIONI.pdf" target="_blank">
+          <img 
+            src="jpg/INFO_TB_E_MANUALE_OPERAZIONI_preview.jpg" 
+            alt="Vorschau Manuale" 
+            class="pdf-preview" />
+          Manuale
+        </a>
+      </li>
+
     </ul>
   </main>
 
