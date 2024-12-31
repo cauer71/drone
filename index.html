@@ -4,8 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Drohnen-Dokumente – Berufsfeuerwehr Bozen</title>
+
   <style>
-    /* Reset & Grundstyles */
+    /* ===================
+       Grundlegende Styles
+       =================== */
     * {
       margin: 0;
       padding: 0;
@@ -16,8 +19,9 @@
       background: #f7f7f7;
       color: #333;
     }
+
     header {
-      background-color: #b11b1b;
+      background-color: #b11b1b; /* Dunkles Rot */
       color: #fff;
       text-align: center;
       padding: 1.5rem;
@@ -26,25 +30,36 @@
       font-size: 1.6rem;
       margin-bottom: 0.5rem;
     }
+
     main {
-      max-width: 600px;
+      max-width: 700px;
       margin: 2rem auto;
       background-color: #fff;
       padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     h2 {
       margin-bottom: 1rem;
     }
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
 
+    /* ===================
+       Download-Liste
+       =================== */
     ul.download-list {
       list-style: none;
       margin: 1rem 0;
+      padding-left: 0;
     }
     ul.download-list li {
       margin: 0.6rem 0;
     }
+
     ul.download-list a {
       display: flex;
       align-items: center;
@@ -53,10 +68,12 @@
       font-weight: 600;
       transition: color 0.3s ease;
     }
+
     ul.download-list a:hover {
       color: #7f1111;
     }
-    /* Icon: PDF */
+
+    /* Icon – PDF */
     ul.download-list a svg {
       width: 18px;
       height: 18px;
@@ -64,11 +81,14 @@
       fill: #b11b1b;
       transition: fill 0.3s ease;
     }
+
     ul.download-list a:hover svg {
       fill: #7f1111;
     }
 
-    /* Responsive: Smartphones etc. */
+    /* ===================
+       Responsive Styles
+       =================== */
     @media (max-width: 480px) {
       header h1 {
         font-size: 1.2rem;
@@ -89,83 +109,86 @@
 
   <main>
     <h2>Übersicht & Downloads</h2>
-    <p>Hier findest du alle relevanten Zertifikate und Dokumentationen als PDF.  
-       Klicke auf den Dateinamen, um das jeweilige Dokument herunterzuladen:</p>
+    <p>
+      Hier findest du alle relevanten Zertifikate und Dokumentationen als PDF.  
+      Klicke auf den Dateinamen, um das jeweilige Dokument herunterzuladen oder
+      im Browser zu öffnen (abhängig von deinen PDF-Einstellungen).
+    </p>
 
     <ul class="download-list">
       <li>
-        <a href="/pdf/Zertifikat%20STS02%20praxis.pdf" target="_blank">
+        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS02%20praxis.pdf" target="_blank">
           <svg viewBox="0 0 24 24">
             <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
                      0-2 .897-2 2v11c0 1.103.897 2 2 
                      2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"></path>
+                     16H5V9h1v7h12V4l1-.001V18z"/>
           </svg>
           Zertifikat STS02 praxis.pdf
         </a>
       </li>
       <li>
-        <a href="/pdf/TRUST%20certificate%20USA.pdf" target="_blank">
+        <a href="https://cauer71.github.io/drone/pdf/TRUST%20certificate%20USA.pdf" target="_blank">
           <svg viewBox="0 0 24 24">
             <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
                      0-2 .897-2 2v11c0 1.103.897 2 2 
                      2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"></path>
+                     16H5V9h1v7h12V4l1-.001V18z"/>
           </svg>
           TRUST certificate USA.pdf
         </a>
       </li>
       <li>
-        <a href="/pdf/UAS%20Funk%20AESA.pdf" target="_blank">
+        <a href="https://cauer71.github.io/drone/pdf/UAS%20Funk%20AESA.pdf" target="_blank">
           <svg viewBox="0 0 24 24">
             <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
                      0-2 .897-2 2v11c0 1.103.897 2 2 
                      2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"></path>
+                     16H5V9h1v7h12V4l1-.001V18z"/>
           </svg>
           UAS Funk AESA.pdf
         </a>
       </li>
       <li>
-        <a href="/pdf/Zertifikat%20A1-A3.pdf" target="_blank">
+        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20A1-A3.pdf" target="_blank">
           <svg viewBox="0 0 24 24">
             <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
                      0-2 .897-2 2v11c0 1.103.897 2 2 
                      2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"></path>
+                     16H5V9h1v7h12V4l1-.001V18z"/>
           </svg>
           Zertifikat A1-A3.pdf
         </a>
       </li>
       <li>
-        <a href="/pdf/Zertifikat%20A2.pdf" target="_blank">
+        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20A2.pdf" target="_blank">
           <svg viewBox="0 0 24 24">
             <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
                      0-2 .897-2 2v11c0 1.103.897 2 2 
                      2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"></path>
+                     16H5V9h1v7h12V4l1-.001V18z"/>
           </svg>
           Zertifikat A2.pdf
         </a>
       </li>
       <li>
-        <a href="/pdf/Zertifikat%20STS%20theorie.pdf" target="_blank">
+        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS%20theorie.pdf" target="_blank">
           <svg viewBox="0 0 24 24">
             <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
                      0-2 .897-2 2v11c0 1.103.897 2 2 
                      2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"></path>
+                     16H5V9h1v7h12V4l1-.001V18z"/>
           </svg>
           Zertifikat STS theorie.pdf
         </a>
       </li>
       <li>
-        <a href="/pdf/Zertifikat%20STS01%20praxis.pdf" target="_blank">
+        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS01%20praxis.pdf" target="_blank">
           <svg viewBox="0 0 24 24">
             <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
                      0-2 .897-2 2v11c0 1.103.897 2 2 
                      2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"></path>
+                     16H5V9h1v7h12V4l1-.001V18z"/>
           </svg>
           Zertifikat STS01 praxis.pdf
         </a>
@@ -173,14 +196,15 @@
     </ul>
   </main>
 
-  <!-- Einfaches JS (Optional) -->
   <script>
+    // Kleines Script-Beispiel: Konsolen-Log beim Klicken
     const links = document.querySelectorAll(".download-list a");
     links.forEach(link => {
       link.addEventListener("click", () => {
-        console.log("Download gestartet:", link.textContent.trim());
+        console.log("Download geklickt:", link.textContent.trim());
       });
     });
   </script>
+
 </body>
 </html>
