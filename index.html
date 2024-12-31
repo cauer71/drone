@@ -51,12 +51,10 @@
        PARALLAX-SEKTION
        ================ */
     .parallax {
-      /* Pfad zum Bild anpassen:
-         Du könntest es zum Beispiel unter /images/drone_bg.jpg ablegen. */
-      background: url("pdf/m30t.jpg") no-repeat center center;
+      /* Pfad zum großen Hintergrundbild, z. B. drone_bg.jpg */
+      background: url("jpg/drone_bg.jpg") no-repeat center center;
       background-size: cover;
-      /* "fixed" sorgt für den Parallax-Effekt beim Scrollen */
-      background-attachment: fixed;
+      background-attachment: fixed; /* Parallax-Effekt */
       height: 60vh;
       position: relative;
       display: flex;
@@ -73,7 +71,7 @@
       z-index: 1;
     }
     .parallax h2 {
-      z-index: 2; /* damit der Text über dem Overlay liegt */
+      z-index: 2; /* Text über Overlay */
       font-size: 2rem;
       text-align: center;
     }
@@ -89,11 +87,10 @@
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-
     main h3 {
       margin-bottom: 1rem;
       font-size: 1.4rem;
-      color: #2f403e; /* Gleiche Farbe wie Header, für einen einheitlichen Look */
+      color: #2f403e; /* Gleiche Farbe wie Header */
     }
     main p {
       margin-bottom: 1rem;
@@ -108,7 +105,9 @@
       padding-left: 0;
     }
     ul.download-list li {
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
     }
     ul.download-list a {
       display: flex;
@@ -118,18 +117,19 @@
       transition: color 0.3s ease;
     }
     ul.download-list a:hover {
-      color: #446d6a; /* etwas helleres Grün-Grau */
+      color: #446d6a;
     }
-    /* PDF-Icon */
-    ul.download-list a svg {
-      width: 18px;
-      height: 18px;
-      margin-right: 8px;
-      fill: #2f403e;
-      transition: fill 0.3s ease;
+    /* Preview-Bild */
+    ul.download-list img.pdf-preview {
+      width: 30px;   /* Größe des Thumbnails anpassen */
+      height: auto;
+      margin-right: 10px;
+      border-radius: 4px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
     }
-    ul.download-list a:hover svg {
-      fill: #446d6a;
+    ul.download-list a:hover img.pdf-preview {
+      transform: scale(1.05);
     }
 
     /* ================
@@ -137,7 +137,7 @@
        ================ */
     @media (max-width: 768px) {
       .parallax {
-        background-attachment: scroll; /* "fixed" kann auf mobilen Geräten ggf. nicht funktionieren */
+        background-attachment: scroll; /* Fallback bei Mobilgeräten */
         height: 40vh;
       }
       .parallax h2 {
@@ -179,80 +179,80 @@
        im Browser zu öffnen (abhängig von deinen PDF-Einstellungen).</p>
 
     <ul class="download-list">
+
+      <!-- Beispiel: Zertifikat STS02 praxis -->
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS02%20praxis.pdf" target="_blank">
-          <svg viewBox="0 0 24 24">
-            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
-                     0-2 .897-2 2v11c0 1.103.897 2 2 
-                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"/>
-          </svg>
+          <img 
+            src="jpg/Zertifikat_STS02_praxis_preview.jpg" 
+            alt="Vorschau Zertifikat STS02 praxis" 
+            class="pdf-preview" />
           Zertifikat STS02 praxis.pdf
         </a>
       </li>
+
+      <!-- Beispiel: TRUST certificate USA -->
       <li>
         <a href="https://cauer71.github.io/drone/pdf/TRUST%20certificate%20USA.pdf" target="_blank">
-          <svg viewBox="0 0 24 24">
-            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
-                     0-2 .897-2 2v11c0 1.103.897 2 2 
-                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"/>
-          </svg>
+          <img 
+            src="jpg/TRUST_certificate_USA_preview.jpg" 
+            alt="Vorschau TRUST certificate USA" 
+            class="pdf-preview" />
           TRUST certificate USA.pdf
         </a>
       </li>
+
+      <!-- Beispiel: UAS Funk AESA -->
       <li>
         <a href="https://cauer71.github.io/drone/pdf/UAS%20Funk%20AESA.pdf" target="_blank">
-          <svg viewBox="0 0 24 24">
-            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
-                     0-2 .897-2 2v11c0 1.103.897 2 2 
-                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"/>
-          </svg>
+          <img 
+            src="jpg/UAS_Funk_AESA_preview.jpg" 
+            alt="Vorschau UAS Funk AESA" 
+            class="pdf-preview" />
           UAS Funk AESA.pdf
         </a>
       </li>
+
+      <!-- Beispiel: Zertifikat A1-A3 -->
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20A1-A3.pdf" target="_blank">
-          <svg viewBox="0 0 24 24">
-            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
-                     0-2 .897-2 2v11c0 1.103.897 2 2 
-                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"/>
-          </svg>
+          <img 
+            src="jpg/Zertifikat_A1-A3_preview.jpg" 
+            alt="Vorschau Zertifikat A1-A3" 
+            class="pdf-preview" />
           Zertifikat A1-A3.pdf
         </a>
       </li>
+
+      <!-- Beispiel: Zertifikat A2 -->
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20A2.pdf" target="_blank">
-          <svg viewBox="0 0 24 24">
-            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
-                     0-2 .897-2 2v11c0 1.103.897 2 2 
-                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"/>
-          </svg>
+          <img 
+            src="jpg/Zertifikat_A2_preview.jpg" 
+            alt="Vorschau Zertifikat A2" 
+            class="pdf-preview" />
           Zertifikat A2.pdf
         </a>
       </li>
+
+      <!-- Beispiel: Zertifikat STS theorie -->
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS%20theorie.pdf" target="_blank">
-          <svg viewBox="0 0 24 24">
-            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
-                     0-2 .897-2 2v11c0 1.103.897 2 2 
-                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"/>
-          </svg>
+          <img 
+            src="jpg/Zertifikat_STS_theorie_preview.jpg" 
+            alt="Vorschau Zertifikat STS theorie" 
+            class="pdf-preview" />
           Zertifikat STS theorie.pdf
         </a>
       </li>
+
+      <!-- Beispiel: Zertifikat STS01 praxis -->
       <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS01%20praxis.pdf" target="_blank">
-          <svg viewBox="0 0 24 24">
-            <path d="M19 2H8c-1.103 0-2 .897-2 2v3H5c-1.103 
-                     0-2 .897-2 2v11c0 1.103.897 2 2 
-                     2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 
-                     16H5V9h1v7h12V4l1-.001V18z"/>
-          </svg>
+          <img 
+            src="jpg/Zertifikat_STS01_praxis_preview.jpg" 
+            alt="Vorschau Zertifikat STS01 praxis" 
+            class="pdf-preview" />
           Zertifikat STS01 praxis.pdf
         </a>
       </li>
