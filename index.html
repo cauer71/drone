@@ -51,7 +51,7 @@
        PARALLAX-SEKTION
        ================ */
     .parallax {
-      background: url("jpg/m30t.jpg") no-repeat center calc(50% - 80px); /* 80px nach oben verschoben */
+      background: url("jpg/m30t.jpg") no-repeat center center;
       background-size: cover;
       background-attachment: fixed; /* Parallax-Effekt */
       height: 60vh;
@@ -60,6 +60,7 @@
       align-items: center;
       justify-content: center;
       color: #fff;
+      margin-bottom: 0; /* Kein Abstand unter dem Bild */
     }
     .parallax::before {
       content: "";
@@ -140,8 +141,9 @@
        ================ */
     @media (max-width: 768px) {
       .parallax {
-        background-attachment: scroll; /* Fallback bei Mobilgeräten */
-        height: 30vh;
+        background-attachment: scroll; /* Kein Parallax-Effekt auf mobilen Geräten */
+        height: 40vh; /* Reduzierte Höhe */
+        margin-bottom: 0; /* Kein Rand unter dem Bild */
       }
       .parallax h2 {
         font-size: 1.5rem;
@@ -199,7 +201,7 @@
           Zertifikat A2
         </a>
       </li>
-            <li>
+      <li>
         <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS%20theorie.pdf" target="_blank">
           <img src="jpg/Zertifikat STS theorie_preview.jpg" alt="Vorschau Zertifikat STS theorie" class="pdf-preview" />
           Zertifikat STS theorie
@@ -217,13 +219,13 @@
           Zertifikat STS02 praxis
         </a>
       </li>
-            <li>
+      <li>
         <a href="https://cauer71.github.io/drone/pdf/TRUST%20certificate%20USA.pdf" target="_blank">
           <img src="jpg/TRUST certificate USA_preview.jpg" alt="Vorschau TRUST certificate USA" class="pdf-preview" />
           TRUST certificate USA
         </a>
       </li>
-            <li>
+      <li>
         <a href="https://cauer71.github.io/drone/pdf/INFO%20TB%20E%20MANUALE%20OPERAZIONI.pdf" target="_blank">
           <img src="jpg/INFO TB E MANUALE OPERAZIONI_preview.jpg" alt="Vorschau Manuale" class="pdf-preview" />
           Manuale
@@ -241,7 +243,6 @@
           Versicherung
         </a>
       </li>
-
 
     </ul>
   </main>
