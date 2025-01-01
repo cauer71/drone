@@ -48,37 +48,6 @@
     }
 
     /* ================
-       PARALLAX-SEKTION
-       ================ */
-    .parallax {
-      background: url("jpg/m30t.jpg") no-repeat center center;
-      background-size: cover;
-      background-attachment: fixed; /* Parallax-Effekt */
-      height: 60vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      margin: 0; /* Kein Abstand nach unten */
-      padding: 0; /* Kein Innenabstand */
-      border: none; /* Verhindert ungewollte Ränder */
-    }
-    .parallax::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      /* halbtransparente Overlay-Farbe (dunkler Schleier) */
-      background: rgba(0, 0, 0, 0.3);
-      z-index: 1;
-    }
-    .parallax h2 {
-      z-index: 2; /* Text über Overlay */
-      font-size: 2rem;
-      text-align: center;
-    }
-
-    /* ================
        MAIN-CONTAINER
        ================ */
     main {
@@ -107,66 +76,25 @@
       padding-left: 0;
     }
     ul.download-list li {
-      margin-bottom: 0.8rem;
-      display: flex;
-      align-items: center;
+      margin-bottom: 1.8rem;
     }
     ul.download-list a {
-      display: flex;
-      align-items: center;
+      display: block;
       font-weight: 600;
       color: #2f403e;
       transition: color 0.3s ease;
+      margin-bottom: 0.4rem;
     }
     ul.download-list a:hover {
       color: #446d6a;
-    }
-
-    /* Preview-Bild
-       STANDARD (Desktop): 400px
-       in der Media Query (max-width: 768px): 150px
-    */
-    ul.download-list img.pdf-preview {
-      width: 300px;   
-      height: auto;
-      margin-right: 20px;
-      border-radius: 4px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-    ul.download-list a:hover img.pdf-preview {
-      transform: scale(1.05);
     }
 
     /* ================
        RESPONSIVE STYLES
        ================ */
     @media (max-width: 768px) {
-      .parallax {
-        background-attachment: scroll; /* Kein Parallax-Effekt auf mobilen Geräten */
-        height: 40vh; /* Höhe für Mobilgeräte */
-        margin: 0; /* Kein Rand */
-        padding: 0; /* Kein Innenabstand */
-      }
-      .parallax h2 {
-        font-size: 1.5rem;
-      }
-      /* Mobile: Previews auf 150px */
-      ul.download-list img.pdf-preview {
-        width: 150px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.4rem;
-      }
-      .parallax h2 {
-        font-size: 1.2rem;
-      }
       main {
         margin: 1rem;
-        padding: 1rem;
       }
     }
   </style>
@@ -179,90 +107,43 @@
     <p>Berufsfeuerwehr Bozen</p>
   </header>
 
-  <!-- PARALLAX-BEREICH -->
-  <section class="parallax">
-    <h2>Bereit für den nächsten Flug?</h2>
-  </section>
-
   <!-- HAUPTINHALT MIT ZERTIFIKATEN -->
   <main>
     <h3>Zertifikate</h3>
     <p>Christian Auer</p>
 
     <ul class="download-list">
+      <!-- Zertifikat A1-A3 -->
       <li>
-        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20A1-A3.pdf" target="_blank">
-          <img src="jpg/Zertifikat A1-A3_preview.jpg" alt="Vorschau Zertifikat A1-A3" class="pdf-preview" />
-          Zertifikat A1-A3
-        </a>
+        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20A1-A3.pdf" target="_blank">📄 Download Zertifikat A1-A3 (PDF)</a>
+        <a href="https://learningzone.eurocontrol.int/ilp/customs/Reports/DACUASComp/Certificate/Validation/14135223/?key=68244be3985b2cc5fa7b6db3ccdeaae1692b0d2ab76fb5e066a2494041018121" target="_blank">🔗 Verifizieren Sie das Zertifikat</a>
       </li>
+
+      <!-- Zertifikat A2 -->
       <li>
-        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20A2.pdf" target="_blank">
-          <img src="jpg/Zertifikat A2_preview.jpg" alt="Vorschau Zertifikat A2" class="pdf-preview" />
-          Zertifikat A2
-        </a>
+        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20A2.pdf" target="_blank">📄 Download Zertifikat A2 (PDF)</a>
+        <a href="https://vliegbewijsonbemandeluchtvaartuigencontroleren.rdw.nl/raadplegen?code=919DAC92-D29C-4195-AFCB-A0EFA99C7193" target="_blank">🔗 Verifizieren Sie das Zertifikat</a>
       </li>
+
+      <!-- Zertifikat STS Theorie -->
       <li>
-        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS%20theorie.pdf" target="_blank">
-          <img src="jpg/Zertifikat STS theorie_preview.jpg" alt="Vorschau Zertifikat STS theorie" class="pdf-preview" />
-          Zertifikat STS theorie
-        </a>
+        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS%20theorie.pdf" target="_blank">📄 Download Zertifikat STS Theorie (PDF)</a>
+        <a href="https://sede.seguridadaerea.gob.es/CSV/AESASGEEPGEE000JJ8064B8T1PJ4DA" target="_blank">🔗 Verifizieren Sie das Zertifikat</a>
       </li>
+
+      <!-- Zertifikat STS01 Praxis -->
       <li>
-        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS01%20praxis.pdf" target="_blank">
-          <img src="jpg/Zertifikat STS01 praxis_preview.jpg" alt="Vorschau Zertifikat STS01 praxis" class="pdf-preview" />
-          Zertifikat STS01 praxis
-        </a>
+        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS01%20praxis.pdf" target="_blank">📄 Download Zertifikat STS01 Praxis (PDF)</a>
+        <a href="https://enacservizi.enac.gov.it/#/validation/e0B%2FkOUsTxFXIbq%2B2TuN9GWYzaOqDiZRYlQULxaJ3724QModj%2Bh%2FoaCRYWL23BYYxn58KbZb%2FdCI%0A9d4OuSni8Q%3D%3D" target="_blank">🔗 Verifizieren Sie das Zertifikat</a>
       </li>
+
+      <!-- Zertifikat STS02 Praxis -->
       <li>
-        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS02%20praxis.pdf" target="_blank">
-          <img src="jpg/Zertifikat STS02 praxis_preview.jpg" alt="Vorschau Zertifikat STS02 praxis" class="pdf-preview" />
-          Zertifikat STS02 praxis
-        </a>
-      </li>
-      <li>
-        <a href="https://cauer71.github.io/drone/pdf/TRUST%20certificate%20USA.pdf" target="_blank">
-          <img src="jpg/TRUST certificate USA_preview.jpg" alt="Vorschau TRUST certificate USA" class="pdf-preview" />
-          TRUST certificate USA
-        </a>
-      </li>
-      <li>
-        <a href="https://cauer71.github.io/drone/pdf/UAS%20Funk%20AESA.pdf" target="_blank">
-          <img src="jpg/UAS Funk AESA_preview.jpg" alt="Vorschau UAS Funk AESA" class="pdf-preview" />
-          UAS Funk AESA
-        </a>
+        <a href="https://cauer71.github.io/drone/pdf/Zertifikat%20STS02%20praxis.pdf" target="_blank">📄 Download Zertifikat STS02 Praxis (PDF)</a>
+        <a href="https://enacservizi.enac.gov.it/droni-frontend/#/validation/9s%2BIDjk8G5EdKv6HoJ%2BmMShVSOyR09iNA%2FpADSInuLe4QModj%2Bh%2FoaCRYWL23BYYSsy5hMvsQsM%2B%0AJvWEp5PRoA%3D%3D" target="_blank">🔗 Verifizieren Sie das Zertifikat</a>
       </li>
     </ul>
   </main>
 
-  <!-- ALLGEMEINE DOKUMENTE -->
-  <main>
-    <h3>Allgemeine Dokumente</h3>
-
-    <ul class="download-list">
-      <li>
-        <a href="https://cauer71.github.io/drone/pdf/INFO%20TB%20E%20MANUALE%20OPERAZIONI.pdf" target="_blank">
-          <img src="jpg/INFO TB E MANUALE OPERAZIONI_preview.jpg" alt="Vorschau Manuale" class="pdf-preview" />
-          Manuale
-        </a>
-      </li>
-      <li>
-        <a href="https://cauer71.github.io/drone/pdf/Assicurazione%202025.pdf" target="_blank">
-          <img src="jpg/Assicurazione 2025_preview.jpg" alt="Vorschau Versicherung" class="pdf-preview" />
-          Versicherung
-        </a>
-      </li>
-    </ul>
-  </main>
-
-  <script>
-    // Optional: Klick-Feedback
-    const downloadLinks = document.querySelectorAll(".download-list a");
-    downloadLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        console.log("Download geklickt:", link.textContent.trim());
-      });
-    });
-  </script>
 </body>
 </html>
