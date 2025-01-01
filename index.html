@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -52,7 +53,7 @@
        ================ */
     .parallax {
       background: url("jpg/m30t.jpg") no-repeat center calc(50% - 80px); /* Verschiebt das Bild um 80px nach oben */
-      
+     
       background-size: cover;
       background-attachment: fixed; /* Parallax-Effekt */
       height: 60vh;
@@ -61,18 +62,20 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      margin: 0;
-      padding: 0;
+      margin: 0; /* Kein Abstand nach unten */
+      padding: 0; /* Kein Innenabstand */
+      border: none; /* Verhindert ungewollte Ränder */
     }
     .parallax::before {
       content: "";
       position: absolute;
       inset: 0;
+      /* halbtransparente Overlay-Farbe (dunkler Schleier) */
       background: rgba(0, 0, 0, 0.3);
       z-index: 1;
     }
     .parallax h2 {
-      z-index: 2;
+      z-index: 2; /* Text über Overlay */
       font-size: 2rem;
       text-align: center;
     }
@@ -91,7 +94,7 @@
     main h3 {
       margin-bottom: 1rem;
       font-size: 1.4rem;
-      color: #2f403e;
+      color: #2f403e; /* Gleiche Farbe wie Header */
     }
     main p {
       margin-bottom: 1rem;
@@ -116,14 +119,17 @@
       font-weight: 600;
       color: #2f403e;
       transition: color 0.3s ease;
-      margin-bottom: 0.3rem;
     }
     ul.download-list a:hover {
       color: #446d6a;
     }
 
+    /* Preview-Bild
+       STANDARD (Desktop): 300px
+       in der Media Query (max-width: 768px): 150px
+    */
     ul.download-list img.pdf-preview {
-      width: 300px;
+      width: 300px;   
       height: auto;
       margin-right: 20px;
       border-radius: 4px;
@@ -138,8 +144,31 @@
        RESPONSIVE STYLES
        ================ */
     @media (max-width: 768px) {
+      .parallax {
+        background-attachment: scroll; /* Kein Parallax-Effekt auf mobilen Geräten */
+        height: 40vh; /* Höhe für Mobilgeräte */
+        margin: 0; /* Kein Rand */
+        padding: 0; /* Kein Innenabstand */
+      }
+      .parallax h2 {
+        font-size: 1.5rem;
+      }
+      /* Mobile: Previews auf 150px */
       ul.download-list img.pdf-preview {
         width: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+      .parallax h2 {
+        font-size: 1.2rem;
+      }
+      main {
+        margin: 1rem;
+        padding: 1rem;
       }
     }
   </style>
@@ -197,8 +226,49 @@
           Zertifikat STS02 Praxis
         </a>
         <a href="https://enacservizi.enac.gov.it/droni-frontend/#/validation/9s%2BIDjk8G5EdKv6HoJ%2BmMShVSOyR09iNA%2FpADSInuLe4QModj%2Bh%2FoaCRYWL23BYYSsy5hMvsQsM%2B%0AJvWEp5PRoA%3D%3D" target="_blank">🔗 Verifizieren Sie das Zertifikat</a>
+      </li>      <li>
+        <a href="https://cauer71.github.io/drone/pdf/TRUST%20certificate%20USA.pdf" target="_blank">
+          <img src="jpg/TRUST certificate USA_preview.jpg" alt="Vorschau TRUST certificate USA" class="pdf-preview" />
+          TRUST certificate USA
+        </a>
+      </li>
+      <li>
+        <a href="https://cauer71.github.io/drone/pdf/UAS%20Funk%20AESA.pdf" target="_blank">
+          <img src="jpg/UAS Funk AESA_preview.jpg" alt="Vorschau UAS Funk AESA" class="pdf-preview" />
+          UAS Funk AESA
+        </a>
       </li>
     </ul>
   </main>
+
+  <!-- ALLGEMEINE DOKUMENTE -->
+  <main>
+    <h3>Allgemeine Dokumente</h3>
+
+    <ul class="download-list">
+      <li>
+        <a href="https://cauer71.github.io/drone/pdf/INFO%20TB%20E%20MANUALE%20OPERAZIONI.pdf" target="_blank">
+          <img src="jpg/INFO TB E MANUALE OPERAZIONI_preview.jpg" alt="Vorschau Manuale" class="pdf-preview" />
+          Manuale
+        </a>
+      </li>
+      <li>
+        <a href="https://cauer71.github.io/drone/pdf/Assicurazione%202025.pdf" target="_blank">
+          <img src="jpg/Assicurazione 2025_preview.jpg" alt="Vorschau Versicherung" class="pdf-preview" />
+          Versicherung
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <script>
+    // Optional: Klick-Feedback
+    const downloadLinks = document.querySelectorAll(".download-list a");
+    downloadLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        console.log("Download geklickt:", link.textContent.trim());
+      });
+    });
+  </script>
 </body>
 </html>
