@@ -51,7 +51,8 @@
        PARALLAX-SEKTION
        ================ */
     .parallax {
-      background: url("jpg/m30t.jpg") no-repeat center calc(50% - 80px); /* Verschiebt das Bild um 80px nach oben */
+      /* Desktop-Version: Bild um 80px nach oben schieben */
+      background: url("jpg/m30t.jpg") no-repeat center calc(50% - 80px);
       background-size: cover;
       height: 60vh;
       position: relative;
@@ -143,11 +144,14 @@
         font-size: 0.9rem;
       }
       .parallax {
-        height: 40vh;
+        /* Mobile-Version: kein Versatz, kein grauer Balken */
+        background: url("jpg/m30t.jpg") no-repeat center center;
+        background-size: cover;
         background-attachment: scroll;
+        height: 40vh;
       }
       .parallax h2 {
-        font-size: 1.4rem; /* Schriftgröße angepasst */
+        font-size: 1.4rem;
       }
       ul.download-list img.pdf-preview {
         width: 150px;
