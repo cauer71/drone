@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Drohnen Staffel – Berufsfeuerwehr Bozen</title>
+  <title>Drohnenstaffel – Berufsfeuerwehr Bozen</title>
   <style>
     /* ================
        GLOBAL RESET
@@ -51,7 +51,7 @@
        PARALLAX-SEKTION
        ================ */
     .parallax {
-      background: url("jpg/m30t.jpg") no-repeat center calc(50% - 80px); /* 80px nach oben verschoben */
+      background: url("jpg/m30t.jpg") no-repeat center center;
       background-size: cover;
       background-attachment: fixed; /* Parallax-Effekt */
       height: 60vh;
@@ -60,7 +60,9 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      margin-bottom: 0; /* Kein Abstand unter dem Bild */
+      margin: 0; /* Kein Abstand nach unten */
+      padding: 0; /* Kein Innenabstand */
+      border: none; /* Verhindert ungewollte Ränder */
     }
     .parallax::before {
       content: "";
@@ -121,11 +123,11 @@
     }
 
     /* Preview-Bild
-       STANDARD (Desktop): 300px
+       STANDARD (Desktop): 400px
        in der Media Query (max-width: 768px): 150px
     */
     ul.download-list img.pdf-preview {
-      width: 400px;   
+      width: 300px;   
       height: auto;
       margin-right: 20px;
       border-radius: 4px;
@@ -142,8 +144,9 @@
     @media (max-width: 768px) {
       .parallax {
         background-attachment: scroll; /* Kein Parallax-Effekt auf mobilen Geräten */
-        height: 40vh; /* Reduzierte Höhe */
-        margin-bottom: 0; /* Kein Rand unter dem Bild */
+        height: 40vh; /* Höhe für Mobilgeräte */
+        margin: 0; /* Kein Rand */
+        padding: 0; /* Kein Innenabstand */
       }
       .parallax h2 {
         font-size: 1.5rem;
